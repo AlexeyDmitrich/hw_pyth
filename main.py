@@ -1,6 +1,6 @@
-import hw_pyth02_1
-import hw_pyth02_2
-import hw_pyth02_3
+
+
+
 
 
 def switch ():
@@ -14,26 +14,34 @@ def switch ():
 |  5. [в стадии разработки]                 |\n \
 |  0. Выход                                 |\n \
 =============================================")
+    print("*** Нет адекватной реакции на повторный вызов ***")
     try:
         case = int(input("Выберите пункт меню.\n"))
     except:
         print("Нет, вводить нужно целое число.\n")
         switch()
     if (case == 2):
+        import hw_pyth02_2
         hw_pyth02_2.init()
         switch()
+        return
     elif (case == 1):
-        hw_pyth02_1 #.init()
+        import hw_pyth02_1
+        hw_pyth02_1.init()
         switch()
+        return
     elif (case == 3):
-        hw_pyth02_3
+        import hw_pyth02_3
+        hw_pyth02_3.init()
         switch()
+        return
     elif (case == 0):
         print("Завершение работы программы")
         return
     else:
         print("Такого пункта меню пока нет(")
         switch()
+        return
 
 try:
     switch()
