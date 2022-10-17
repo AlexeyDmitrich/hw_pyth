@@ -1,3 +1,6 @@
+'''
+Вторая версия меню (в разработке)
+'''
 
 def switch ():
 
@@ -10,29 +13,35 @@ def switch ():
 |  5. [в стадии разработки]                 |\n \
 |  0. Выход                                 |\n \
 =============================================")
-    print("*** Нет адекватной реакции на повторный вызов ***")
+    caseList = []
     try:
         case = int(input("Выберите пункт меню.\n"))
     except:
         print("Нет, вводить нужно целое число.\n")
         switch()
-    if (case == 2):
+    caseList.append(case)
+
+    if (caseList[0] == 2):
         import hw_pyth02_2
         hw_pyth02_2.init()
+        caseList.pop(0)
         switch()
         return
-    elif (case == 1):
+    elif (caseList[0] == 1):
         import hw_pyth02_1
         hw_pyth02_1.init()
+        caseList.pop(0)
         switch()
         return
-    elif (case == 3):
+    elif (caseList[0] == 3):
         import hw_pyth02_3
         hw_pyth02_3.init()
+        caseList.pop(0)
         switch()
         return
-    elif (case == 0):
+    elif (caseList[0] == 0):
         print("Завершение работы программы")
+        caseList.pop(0)
         return
     else:
         print("Такого пункта меню пока нет(")
@@ -43,4 +52,3 @@ try:
     switch()
 except:
     print("Соррян, произошла непредвиденная ситуация.")
-
